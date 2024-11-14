@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "Waterlily";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://webstartiom.blob.core.windows.net/hannah-clayton/fonts/waterlily/normal/index.otf")
+    format("opentype");
+}
+
+@mixin montserrat-fonts {
+  $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+  $styles: normal, italic;
+
+  @each $weight in $weights {
+    @each $style in $styles {
+      .montserrat-#{$weight}-#{$style} {
+        font-family: "Montserrat", sans-serif;
+        font-weight: $weight !important;
+        font-style: $style;
+      }
+    }
+  }
+}
+
+@mixin league_spartan-fonts {
+  $weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+  $styles: normal;
+
+  @each $weight in $weights {
+    @each $style in $styles {
+      .league-spartan-#{$weight}-#{$style} {
+        font-family: "League Spartan", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: $weight !important;
+        font-style: $style;
+      }
+    }
+  }
+}
+
+@mixin source_serif_4-fonts {
+  $weights: 200, 300, 400, 500, 600, 700, 800, 900;
+  $styles: normal, italic;
+
+  @each $weight in $weights {
+    @each $style in $styles {
+      .source-serif-4-#{$weight}-#{$style} {
+        font-family: "Source Serif 4", system-ui;
+        font-optical-sizing: auto;
+        font-weight: $weight !important;
+        font-style: $style;
+      }
+    }
+  }
+}
+
+@include montserrat-fonts;
+@include league_spartan-fonts;
+@include source_serif_4-fonts;
+
+.waterlily-regular {
+  font-family: "Waterlily", serif;
+  font-weight: 400 !important;
+  font-style: normal;
+}
+
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400 !important;
+  font-style: normal;
+}
+
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700 !important;
+  font-style: normal;
+}
+
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400 !important;
+  font-style: italic;
+}
+
+.dm-serif-display-regular {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400 !important;
+  font-style: normal;
+}
+
+.dm-serif-display-regular-italic {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400 !important;
+  font-style: italic;
+}

@@ -1,0 +1,16 @@
+// app global css in SCSS form
+@import "./font.scss";
+
+.q-ma-auto {
+  margin: auto;
+}
+
+.q-banner--header__custom {
+  padding-left: 12px;
+  padding-right: 12px;
+  .q-banner__content > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
