@@ -1,5 +1,11 @@
 // app global css in SCSS form
+@import "./mixin.scss";
 @import "./font.scss";
+@import "./typography.scss";
+
+.h-fit-content {
+  height: fit-content;
+}
 
 .q-ma-auto {
   margin: auto;
@@ -12,5 +18,35 @@
     display: flex;
     align-items: center;
     gap: 10px;
+  }
+}
+
+.q-btn__custom {
+  @extend .h-fit-content;
+
+  &.q-btn__custom--active {
+    .q-btn__content * {
+      color: $secondary;
+    }
+  }
+
+  &:hover {
+    .q-btn__content * {
+      color: $secondary;
+    }
+  }
+
+  .q-focus-helper {
+    display: none;
+  }
+  .q-btn__content * {
+    @include transition-default(color);
+    color: $dark;
+  }
+}
+
+.q-list__custom {
+  .q-focus-helper {
+    display: none;
   }
 }

@@ -94,6 +94,9 @@ export const webNum = {
     },
   },
   maxWidth: 1750,
+  page: {
+    maxHeight: 820,
+  },
 };
 
 export const blogs = [
