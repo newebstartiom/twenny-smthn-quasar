@@ -60,7 +60,9 @@
                   color="dark"
                   size="xs"
                   flat
-                  :class="`q-btn__custom${setNavigationState(route)}`"
+                  :class="`q-btn__custom q-btn__custom--default${setNavigationState(
+                    route
+                  )}`"
                 >
                   <h3 class="text-h6 montserrat-700-normal q-ma-none">
                     {{ route.name }}

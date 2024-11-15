@@ -99,6 +99,71 @@ export const webNum = {
   },
 };
 
+export const typography = {
+  footer: {
+    p_1: [
+      "These tricky, turbulent,",
+      "troublesome, testing, tops-turvy,",
+      "twenties? We’re in them",
+      "together.",
+    ],
+    p_2: [
+      [
+        "© 2024 All Rights Reserved",
+        " | ",
+        {
+          type: "button",
+          value: {
+            text: "Disclaimer",
+            component: {
+              flat: true,
+              color: "#6f82c6",
+              cClass: " q-btn__custom--primary text-caption",
+              padding: "xs",
+            },
+            src: {
+              to: "/legal/disclaimer",
+            },
+          },
+        },
+        " | ",
+        {
+          type: "button",
+          value: {
+            text: "Privacy Policy",
+            component: {
+              flat: true,
+              color: "#6f82c6",
+              cClass: " q-btn__custom--primary text-caption",
+              padding: "xs",
+            },
+            src: {
+              to: "/legal/privacy-policy",
+            },
+          },
+        },
+        " | ",
+        {
+          type: "button",
+          value: {
+            text: "Site Credit",
+            component: {
+              flat: true,
+              color: "#6f82c6",
+              cClass: " q-btn__custom--primary text-caption",
+              padding: "xs",
+            },
+            src: {
+              href: `https://webstartiom.com`,
+            },
+          },
+        },
+      ],
+    ],
+    p_3: "I'm based in Isle of Man!",
+  },
+};
+
 export const blogs = [
   {
     id: "",
@@ -2161,6 +2226,43 @@ export const blogs = [
     ],
   },
 ];
+
+export const blog_genres = [
+  {
+    name: "All",
+    id: "all",
+    active: true,
+  },
+  {
+    name: "Mental Health",
+    id: "mental-health",
+    active: false,
+  },
+  {
+    name: "Relationships",
+    id: "relationships",
+    active: false,
+  },
+  {
+    name: "Personal Growth",
+    id: "personal-growth",
+    active: false,
+  },
+  {
+    name: "Latest News",
+    id: "latest-news",
+    active: false,
+  },
+  {
+    name: "Health & Wellbeing",
+    id: "health-and-wellbeing",
+    active: false,
+  },
+];
+
+blog_genres.forEach((v) => {
+  v.to = `/blog/${v.id}#blog-list`;
+});
 
 blogs.forEach((v) => {
   v.id = encodeURIComponent(v.title.toLowerCase());

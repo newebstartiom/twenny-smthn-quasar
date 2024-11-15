@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page class="flex flex-center" style="min-height: 820px">
     <div
       id="init-display"
       class="q-pa-lg"
@@ -13,13 +13,11 @@
     >
       <div
         class="relative-position q-ma-auto"
-        style="max-width: 550px; min-width: 550px"
+        style="max-width: 380px; min-width: 380px"
       >
-        <div
-          class="circle-gif-pos"
-          style="position: absolute; width: 100%; height: 100%"
-        >
+        <div class="circle-gif-pos">
           <q-img
+            v-if="show_2"
             :src="
               helper.setFileUrl(
                 company.storageUrl,
@@ -28,7 +26,7 @@
                 }.gif`
               )
             "
-            :width="$q.screen.width < 650 ? '470px' : ''"
+            :width="$q.screen.width < 650 ? '400px' : ''"
             loading="eager"
             no-spinner
             no-transition
@@ -62,11 +60,13 @@
 <style scoped>
 .circle-gif-pos {
   position: absolute;
-  top: -100px;
-  left: 36px;
+  width: 140%;
+  height: 100%;
+  top: -76px;
+  left: -10px;
   @media (min-width: 650px) {
-    left: 0 !important;
-    top: -40px !important;
+    left: -80px;
+    top: -30px;
   }
 }
 </style>
@@ -151,6 +151,7 @@ export default defineComponent({
       company,
       webNum: webNum.page,
       show_1: false,
+      show_2: false,
       initTypeInstance: {
         id: "typewriter-instance",
         instance: null,
@@ -178,6 +179,9 @@ export default defineComponent({
             .typeString(this.words[0])
             .callFunction(() => {
               this.show_1 = true;
+              setTimeout(() => {
+                this.show_2 = true;
+              }, 1000);
             })
             .start();
         }, 0);
